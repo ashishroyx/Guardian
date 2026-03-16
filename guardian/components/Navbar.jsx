@@ -28,6 +28,9 @@ return(
   <Link href="/about" className="hover:text-[#333330] transition-colors">
     About
   </Link>
+  <Link href="/gallary" className="hover:text-[#333330] transition-colors">
+    Logs
+  </Link>
  
 </div>
 

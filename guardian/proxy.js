@@ -4,7 +4,9 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 // Routes NOT in this list will be public (like your homepage).
 const isProtectedRoute = createRouteMatcher([
   
-  "/about(.*)"
+  "/about(.*)",
+  "/dashboard(.*)",
+  "/gallary(.*)"
 ]);
 
 export default clerkMiddleware(async (auth, req) => {
