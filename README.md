@@ -4,7 +4,14 @@
 
 ---
 
-##  Core Features
+##  Project Links
+
+* **Live Website:** [View Guardian Live](https://guardian-dnqy.vercel.app/)
+* **Video Preview:** [Watch Project Demo](https://your-video-link.com)
+
+---
+
+## Core Features
 
 * **Real-time Edge AI:** On-device object detection using **TensorFlow.js**. Video streams are analyzed locally; private data never leaves your browser.
 * **Evidence Vault:** A date-sorted, high-precision gallery of all detected threats with **millisecond-accurate timestamps**.
@@ -17,16 +24,16 @@
 
 ##  Tech Stack
 
-* **Core Framework:** [Next.js](https://nextjs.org/) 
+* **Core Framework:** [Next.js](https://nextjs.org/) (App Router & Turbopack)
 * **AI / Machine Learning:** * **TensorFlow.js** (Core Engine)
     * **@tensorflow-models/coco-ssd** (Object Detection Model)
-* **Frontend & UI:** * **Tailwind CSS** 
-    * **React Webcam** 
-    * **Lucide React** 
-* **Database & Storage:** * **Supabase** 
-    * **Supabase Storage** 
-* **Authentication:** * **Clerk** 
-* **Data Visualization:** * **Recharts** 
+* **Frontend & UI:** * **Tailwind CSS** (Custom "Linen & Charcoal" UI)
+    * **React Webcam** (Stream Handling)
+    * **Lucide React** (Iconography)
+* **Database & Storage:** * **Supabase** (PostgreSQL Database)
+    * **Supabase Storage** (S3 Buckets for encrypted snapshots)
+* **Authentication:** * **Clerk** (User Management)
+* **Data Visualization:** * **Recharts** (Activity Graphing)
 
 ---
 
