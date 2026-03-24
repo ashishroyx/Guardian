@@ -7,7 +7,6 @@
 ##  Project Links
 
 * **Live Website:** [View Guardian Live](https://guardian-dnqy.vercel.app/)
-* **Video Preview:** [Watch Project Demo](https://your-video-link.com)
 
 ---
 
