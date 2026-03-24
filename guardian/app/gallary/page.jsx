@@ -9,18 +9,18 @@ import { Lock, ShieldCheck, Fingerprint, Download } from "lucide-react";
 const GalleryPage = () => {
   const { userId } = useAuth();
   
-  // Security States
+  
   const [isLocked, setIsLocked] = useState(true);
   const [pinInput, setPinInput] = useState("");
   const [dbPin, setDbPin] = useState(null);
   const [pinError, setPinError] = useState(false);
 
-  // Action Auth States
+  
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [pendingAction, setPendingAction] = useState(null);
   const [verifyPinInput, setVerifyPinInput] = useState("");
 
-  // Data States
+  
   const [snapshots, setSnapshots] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -124,7 +124,7 @@ const GalleryPage = () => {
   return (
     <div className="min-h-screen bg-[#F7F6F2] text-[#333330] p-6 pt-24 md:pt-32 lg:p-30 relative">
       
-      {/* --- RE-DESIGNED DELETE POPUP (SMALLER) --- */}
+      
       {showConfirmModal && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
           <div className="absolute inset-0 bg-black/5 backdrop-blur-md" onClick={() => setShowConfirmModal(false)} />
@@ -140,7 +140,7 @@ const GalleryPage = () => {
         </div>
       )}
 
-      {/* --- MASTER LOCK (SMALLER + LESS BLUR) --- */}
+      
       {isLocked && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-6">
           <div className="absolute inset-0 bg-white/10 backdrop-blur-md" />
@@ -162,7 +162,7 @@ const GalleryPage = () => {
         </div>
       )}
 
-      {/* --- ORIGINAL HEADER & FEATURES --- */}
+      
       <div className="max-w-7xl mx-auto flex justify-between items-end border-b border-black/5 pb-8 mb-12">
         <div>
           <h1 className="text-[12px] font-black uppercase tracking-[0.4em] opacity-40 mb-2">Evidence Vault</h1>
@@ -176,7 +176,7 @@ const GalleryPage = () => {
         
         {snapshots.length > 0 && (
           <div className="flex flex-wrap gap-6 items-center">
-            {/* BULK DELETE */}
+            
             <div className="flex gap-3 items-center border-r border-black/10 pr-6">
                <span className="text-[9px] font-black uppercase opacity-30">Delete:</span>
                <button onClick={() => {setPendingAction({type: 'bulk', range: '24h'}); setShowConfirmModal(true)}} className="text-[9px] font-bold hover:text-red-500">24H</button>
@@ -184,7 +184,7 @@ const GalleryPage = () => {
                <button onClick={() => {setPendingAction({type: 'bulk', range: '30d'}); setShowConfirmModal(true)}} className="text-[9px] font-bold hover:text-red-500">1M</button>
             </div>
 
-            {/* DOWNLOAD ALL & CLEAR VAULT */}
+            
             <div className="flex gap-6">
               <button onClick={handleDownloadAll} className="text-[9px] font-bold uppercase tracking-widest text-[#333330] hover:underline">Download All</button>
               <button onClick={() => {setPendingAction({type: 'clear'}); setShowConfirmModal(true)}} className="text-[9px] font-bold uppercase text-red-500 hover:underline">Clear Vault</button>
@@ -193,7 +193,7 @@ const GalleryPage = () => {
         )}
       </div>
 
-      {/* --- GRID --- */}
+      
       <div className="max-w-7xl mx-auto space-y-16">
         {Object.keys(groupedSnapshots).map((date) => (
           <section key={date}>
@@ -213,7 +213,7 @@ const GalleryPage = () => {
         ))}
       </div>
 
-      {/* --- LIGHTBOX (RESTORED DOWNLOAD) --- */}
+      
        {selectedImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 lg:p-12 animate-in fade-in duration-300">
           <div 
@@ -223,7 +223,7 @@ const GalleryPage = () => {
           
           <div className="relative bg-white w-full max-w-6xl h-full max-h-[90vh] rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] border border-black/5 flex flex-col lg:flex-row">
             
-            {/* LEFT: Image Stage */}
+            
             <div className="relative lg:w-2/3 bg-[#111] flex items-center justify-center overflow-hidden group">
               <img 
                 src={selectedImage.src} 
@@ -236,7 +236,7 @@ const GalleryPage = () => {
               </div>
             </div>
 
-            {/* RIGHT: Information Panel */}
+            
             <div className="lg:w-1/3 p-8 lg:p-12 flex flex-col justify-between bg-white/50 backdrop-blur-md">
               <div className="space-y-10">
                 <div className="flex justify-between items-center">
@@ -252,7 +252,7 @@ const GalleryPage = () => {
                 <div className="space-y-8">
                    <div className="group">
                      <p className="text-[10px] font-black uppercase tracking-[0.3em] text-black/30 mb-2">Exact Capture Time</p>
-                     {/* Added tabular-nums so the seconds don't jump around visually */}
+                     
                      <p className="text-4xl font-light tracking-tighter tabular-nums text-[#1a1a1a]">
                         {selectedImage.time.split(' ')[0]}
                         <span className="text-sm font-bold ml-2 opacity-40 uppercase">{selectedImage.time.split(' ')[1]}</span>
@@ -278,7 +278,7 @@ const GalleryPage = () => {
                 </div>
               </div>
 
-              {/* ACTION BUTTONS */}
+              
               <div className="flex flex-col gap-3 pt-8">
                 <button 
                   onClick={() => handleDownload(selectedImage.src, `guardian-${selectedImage.time.replace(/[: ]/g, "-")}.webp`)}

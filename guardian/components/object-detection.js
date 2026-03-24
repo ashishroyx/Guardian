@@ -6,10 +6,10 @@ import { load as cocoSSDLoad } from "@tensorflow-models/coco-ssd";
 import * as tf from "@tensorflow/tfjs";
 import { renderPredictions } from "@/utils/render-predictions";
 import { supabase } from "@/utils/supabase";
-import { useAuth } from "@clerk/nextjs"; // ✅ ADDED CLERK IMPORT
+import { useAuth } from "@clerk/nextjs"; 
 
 const ObjectDetection = () => {
-  const { userId } = useAuth(); // ✅ ADDED USERID HOOK
+  const { userId } = useAuth(); 
   const [isLoading, setIsLoading] = useState(true);
   const [isCameraOn, setIsCameraOn] = useState(true);
   
@@ -31,7 +31,7 @@ const ObjectDetection = () => {
   };
 
   const takeSnapshot = async (count, maxScore) => {
-    // Safety check: Don't upload if no user is logged in
+    
     if (!userId) {
       console.error("No user ID found. Are you logged in?");
       return;
@@ -63,7 +63,7 @@ const ObjectDetection = () => {
               label: "person",
               confidence: parseFloat(maxScore.toFixed(2)),
               person_count: count, 
-              user_id: userId, // ✅ LINKING TO CLERK USER
+              user_id: userId, 
             },
           ]);
 

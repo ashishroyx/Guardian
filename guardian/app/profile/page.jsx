@@ -9,7 +9,7 @@ export default function ProfilePage() {
   const [pinData, setPinData] = useState({ current: "", next: "", confirm: "" });
   const [status, setStatus] = useState({ type: "", msg: "" });
   
-  // --- HYDRATION FIX ---
+  
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
     setIsMounted(true);
@@ -59,14 +59,14 @@ export default function ProfilePage() {
     }
   };
 
-  // Prevent rendering until mounted to avoid hydration mismatch from browser extensions
+  
   if (!isMounted) return null;
 
   return (
     <div className="min-h-screen bg-[#F7F6F2] p-6 pt-28 md:pt-32 lg:p-30 font-sans text-[#333330] relative z-0">
       <div className="max-w-3xl mx-auto space-y-6 md:space-y-10">
         
-        {/* Header Area */}
+        
         <header className="flex justify-between items-end border-b border-black/5 pb-6 md:pb-10">
           <div>
             <div className="flex items-center gap-2 mb-2 md:mb-3">
@@ -80,7 +80,7 @@ export default function ProfilePage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10">
           
-          {/* Left Column: Identity Card */}
+          
           <div className="lg:col-span-5 space-y-6">
             <section className="bg-white p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] border border-black/5 shadow-sm overflow-hidden relative group">
               <div className="absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
@@ -122,7 +122,7 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* Right Column: Security Form */}
+          
           <div className="lg:col-span-7">
             <section className="bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-black/5 shadow-xl transition-all duration-500 hover:shadow-2xl">
               <div className="flex items-center justify-between mb-6 md:mb-10">

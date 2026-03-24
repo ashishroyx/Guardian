@@ -45,7 +45,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* CALM PREVIEW CARD */}
+          
           <div className="relative flex justify-center ">
             <div className="relative bg-white/60 backdrop-blur-xl border border-white p-8 rounded-[3rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.04)] w-full max-w-md">
                <div className="aspect-[4/5] bg-[#F0EFED] rounded-[2.2rem] overflow-hidden relative flex flex-col items-center justify-center group">
@@ -62,7 +62,7 @@ export default function LandingPage() {
         </div>
       </header>
 
-      {/* REFINED FEATURES */}
+      
       <section id="logic" className="bg-white/40 border-y border-[#E2E1DA] py-32 px-10">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-20">
           <Feature 
@@ -80,7 +80,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* PROJECT MISSION */}
+      
       <section className="py-32 max-w-4xl mx-auto px-10 text-center">
           <ShieldCheck className="mx-auto mb-8 text-[#E2E1DA]" size={80} />
           <h2 className="text-3xl font-black text-[#333330] tracking-tight mb-8 uppercase italic leading-none">
@@ -93,7 +93,7 @@ export default function LandingPage() {
           </p>
       </section>
 
-      {/* FOOTER */}
+      
       <footer className="py-24 px-10 border-t border-[#E2E1DA] bg-white flex flex-col items-center text-center">
           <p className="text-[19px] font-black text-[#A1A09A] tracking-[0.5em] uppercase mb-4">
             Guardian
@@ -105,7 +105,7 @@ export default function LandingPage() {
           </div>
       </footer>
 
-      {/* CSS For Scan Animation */}
+    
       <style jsx global>{`
         @keyframes scan {
           0% { transform: translateY(0); }

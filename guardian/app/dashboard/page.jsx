@@ -17,13 +17,13 @@ const DashboardPage = () => {
   const [recentLogs, setRecentLogs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   
-  // Security Popup State
+  
   const [showSecurityAlert, setShowSecurityAlert] = useState(false);
 
   useEffect(() => {
     if (!userId) return;
     fetchDashboardData();
-    checkVaultSecurity(); // Check PIN status on login
+    checkVaultSecurity(); 
   }, [userId]);
 
   const checkVaultSecurity = async () => {
@@ -33,7 +33,7 @@ const DashboardPage = () => {
       .eq("id", userId)
       .single();
 
-    // If PIN is default (1234) or profile doesn't exist yet, show alert
+    
     if (!data || data.vault_pin === "1234") {
       setShowSecurityAlert(true);
     }
@@ -79,7 +79,7 @@ const DashboardPage = () => {
   return (
     <div className="min-h-screen bg-[#F7F6F2] text-[#333330] p-6 pt-24 md:pt-32">
       
-      {/* --- SECURITY NOTIFICATION POPUP --- */}
+     
       {showSecurityAlert && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/5 backdrop-blur-sm">
           <div className="bg-white p-8 rounded-[2.5rem] shadow-2xl border border-black/5 max-w-sm w-full relative animate-in zoom-in-95 duration-300">
@@ -110,7 +110,7 @@ const DashboardPage = () => {
       )}
 
       <div className="max-w-7xl mx-auto space-y-10">
-        {/* --- WELCOME SECTION --- */}
+        
         <header className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-black/5 pb-8 gap-4">
           <div>
             <h1 className="text-[12px] font-black uppercase tracking-[0.4em] opacity-40 mb-2">Systems Online</h1>
@@ -124,9 +124,9 @@ const DashboardPage = () => {
           </Link>
         </header>
 
-        {/* --- ANALYTICS GRID --- */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* 24 HOUR ACTIVITY GRAPH */}
+         
           <div className="lg:col-span-2 bg-white rounded-[2.5rem] p-8 border border-black/5 shadow-sm">
             <div className="flex justify-between items-center mb-8">
               <h3 className="text-[10px] font-black uppercase tracking-widest opacity-40">Activity Density (24h)</h3>
@@ -167,7 +167,7 @@ const DashboardPage = () => {
             </div>
           </div>
 
-          {/* QUICK STATS & REPORT */}
+        
           <div className="space-y-6">
             <div className="bg-[#333330] text-white rounded-[2.5rem] p-8 shadow-xl relative overflow-hidden">
                <div className="relative z-10">
@@ -199,7 +199,7 @@ const DashboardPage = () => {
           </div>
         </div>
 
-        {/* --- DAILY SUMMARY TABLE --- */}
+        
         <div className="bg-white rounded-[2.5rem] p-10 border border-black/5 shadow-sm">
           <h3 className="text-[10px] font-black uppercase tracking-widest opacity-40 mb-8">System Report Summary</h3>
           <div className="overflow-x-auto">
